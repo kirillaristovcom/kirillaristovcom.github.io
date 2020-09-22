@@ -1,0 +1,11 @@
+{%- assign da = page.url | remove: '/en/blog/' | remove: '/ru/blog/' %}
+{%- assign da = da | split: '-' %}
+{%- capture ds %}{{ da[0] }}-{{ da[1] }}-{{ da[2] }} {{ da[3] }}:{{ da[4] }}{% endcapture -%}
+
+{%- if page.lang == 'ru' %}
+  {%- assign m = ds | date: "%-m" | minus: 1 %}
+  {{- ds | date: "%Y" }}, {{ site.months[m] }}, {{ ds | date: "%-d %R %Z" }}
+{%- endif %}
+{%- if page.lang == 'en' %}
+  {{- ds | date: "%B %-d, %Y at %R %p %Z" }}
+{%- endif %}

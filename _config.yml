@@ -1,0 +1,89 @@
+url: https://kirillaristovcom.github.io
+timezone: UTC
+lang: ru
+languages: ["ru", "en"]
+doc_root: "https://github.com/kirillaristovcom/kirillaristovcom.github.io/raw/master"
+
+permalink: "pretty"
+# Spaces and non-alphanumeric characters except for ._~!$&'()+,;=@
+# The _config.yml file => the-_config.yml-file
+
+months:
+    - Январь
+    - Февраль
+    - Март
+    - Апрель
+    - Май
+    - Июнь
+    - Июль
+    - Август
+    - Сентябрь
+    - Октябрь
+    - Ноябрь
+    - Декабрь
+
+# jekyll-paginate configuration
+paginate:       5
+
+# Build settings
+markdown:       "kramdown"
+highlighter:    "rouge"
+plugins:
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Atom feed (https://www.rubydoc.info/gems/jekyll-feed/0.15.0)
+#feed:
+#    posts_limit: 5
+#    collections:
+#        - blog
+
+
+# Translations
+t:
+  ru:
+    title: 'Голубыми тропинками бесконечных рек'
+    description: 'Я прекрасно знаю, мне нужно идти суровым путем'
+    #В моей фантазии я вижу алеющее небо и цветущий рай, но я прекрасно знаю, что мне нужно идти суровым путем и что мне грозят черные бури. Шарлотта Бронте "Джен Эйр". Переводчик В.О. Станевич.
+    keywords: 'Кирилл Аристов, Кирилл из Фрязино, познание, дикая природа России, комбинированные путешествия, каяк, странствие, Сибирь'
+    author: 'Кирилл Аристов, kirillaristov.com'
+    generator: 'Усердие, Надежды и Любовь'
+    items: 'записей'
+    pages_label: 'Страницы'
+    prev: 'Предыдущий'
+    next: 'Следующий'
+  en:
+    title: 'Along Blueways of Endless Rivers'
+    description: 'I am perfectly aware, lies at my feet a rough tract to travel'
+    #I have a rosy sky and a green flowery Eden in my brain; but without, I am perfectly aware, lies at my feet a rough tract to travel, and around me gather black tempests to encounter
+    keywords: 'Kirill Aristov, Kirill from Fryazino, comprehension, wild Russia, combining trips, kayak, adventure, journey, voyage, Siberia'
+    author: 'Kirill Aristov, kirillaristov.com'
+    generator: 'Effort, Hopes and Love'
+    items: 'posts'
+    pages_label: 'Pages'
+    prev: 'Previous'
+    next: 'Next'
+
+
+# Collections
+collections:
+  blog:
+    output: true
+  pages:
+    output: true
+
+# Front Matter Defaults
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+defaults:
+  - 
+    scope:
+      path: "_blog"
+    values:
+      layout: "post"
+  - 
+    scope:
+      path: "_pages"
+    values:
+      layout: "default"

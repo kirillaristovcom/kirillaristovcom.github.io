@@ -1,0 +1,26 @@
+<nav class="language-switcher">
+  <ul>
+  {%- if page.name contains "index" %}
+    {%- if page.lang == 'ru' %}
+    <li>RU</li>
+    <li><a href="/en/" hreflang="en">EN</a></li>
+    {%- endif %}
+
+    {%- if page.lang == 'en' %}
+    <li><a href="/ru/" hreflang="ru">RU</a></li>
+    <li>EN</li>
+    {%- endif %}
+
+  {%- else %}
+    {%- if page.lang == 'ru' %}
+    <li>RU</li>
+    <li><a href="{{ page.url | replace_first: '/ru', '/en' }}" hreflang="en">EN</a></li>
+    {%- endif %}
+
+    {%- if page.lang == 'en' %}
+     <li><a href="{{ page.url | replace_first: '/en', '/ru' }}" hreflang="ru">RU</a></li>
+     <li>EN</li>
+    {%- endif %}
+  {%- endif %}
+  </ul>
+</nav>

@@ -1,0 +1,51 @@
+---
+layout:
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+    <loc>{{ site.url }}</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en" />
+      <changefreq>weekly</changefreq>
+      <priority>1.00</priority>
+    </url>
+  
+  {%- assign blog = site.blog | where:"lang", 'ru' %}
+  {%- for page in blog reversed %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | replace_first: '/ru', '/en' }}" />
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  {%- endfor %}
+  
+  {%- assign blog = site.blog | where:"lang", 'en' %}
+  {%- for page in blog reversed %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="{{ site.url }}{{ page.url | replace_first: '/en', '/ru' }}" />
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  {%- endfor %}
+
+  {%- assign pages = site.pages | where:"lang", 'ru' %}
+  {%- for page in pages %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | replace_first: '/ru', '/en' }}" />
+      <changefreq>weekly</changefreq>
+    </url>
+  {%- endfor %}
+  
+  {%- assign pages = site.pages | where:"lang", 'en' %}
+  {%- for page in pages %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="{{ site.url }}{{ page.url | replace_first: '/en', '/ru' }}" />
+      <changefreq>weekly</changefreq>
+    </url>
+  {%- endfor %}
+</urlset>

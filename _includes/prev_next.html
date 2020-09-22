@@ -1,0 +1,43 @@
+<!--
+{%- if page.previous or page.next %}
+  <nav class="prev-next">
+    {%- if page.previous %}
+      <a href="{{ page.previous.url }}">{{ site.t[page.lang].prev }}</a>
+    {%- endif %}
+    {%- if page.next %}
+      <a href="{{ page.next.url }}">{{ site.t[page.lang].next }}</a>
+    {%- endif %}
+  </nav>
+{%- endif %}
+-->
+
+
+<nav class="prev-next">
+{% assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang %}
+{% for post in blog %}
+  {% if post.lang == page.lang %}
+    {% if prev %}
+      <a href="{{ post.url }}">{{ site.t[page.lang].prev }}</a>
+      {% break %}
+    {% endif %}
+    {% assign prev = false %}
+    {% if post.path == page.path %}
+      {% assign prev = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang | reverse %}
+{% for post in blog %}
+  {% if post.lang == page.lang %}
+    {% if next %}
+      <a href="{{ post.url }}">{{ site.t[page.lang].next }}</a>
+      {% break %}
+    {% endif %}
+    {% assign next = false %}
+    {% if post.path == page.path %}
+      {% assign next = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</nav>

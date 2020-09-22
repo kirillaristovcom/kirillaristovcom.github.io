@@ -1,0 +1,37 @@
+{% include head.html %}
+
+<body id="body">
+
+	<main class="main">
+	
+		<div class="content">
+		
+			<h1 class="body__title">{{ site.t[page.lang].title }}</h1>
+			<!-- <h2 class="body__description">{{ site.t[page.lang].description }}</h2> -->
+      
+      {% include lang_changer.html %}
+
+      {% assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang %}
+  
+      <div>{{ blog.size }} {{ site.t[page.lang].items }}</div>
+      
+			<ul class="blogcontent">
+        {% for page in blog reversed %}
+          <li>
+            <h2 class="post__title">
+              <a href="{{ page.url }}" hreflang="{{ page.lang }}">{{ page.title }} <strong>[{{ page.lang }}]</strong></a>
+            </h2>
+            <p class="post__date"><small>{% include post_date.html %}</small></p>
+            <!-- <p>{{ page.descr }}</p> -->
+          </li>
+        {% endfor %}
+			</ul>
+
+		</div>
+	
+	</main>
+
+	{% include footer.html %}
+
+</body>
+</html>
