@@ -52,8 +52,8 @@ t:
     generator: 'Усердие, Надежды и Любовь'
     items: 'записей'
     pages_label: 'Страницы'
-    prev: 'Предыдущий'
-    next: 'Следующий'
+    newer: 'Выше'
+    older: 'Ниже'
     coord: 'Координаты'
   en:
     title: 'Along Blueways of Endless Rivers'
@@ -64,8 +64,8 @@ t:
     generator: 'Effort, Hopes and Love'
     items: 'posts'
     pages_label: 'Pages'
-    prev: 'Previous'
-    next: 'Next'
+    newer: 'Up'
+    older: 'Down'
     coord: 'Coordinates'
 
 

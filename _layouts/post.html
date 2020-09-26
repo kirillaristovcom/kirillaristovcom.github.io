@@ -11,11 +11,8 @@
 			{% include lang_changer.html %}
 			
 			<h2 class="post__title">{{ page.title }}</h2>
-      
-			<p class="post__date"><small>{% include post_date.html %}</small></p>
-      
-      {% include prev_next_blog.html %}
-			
+ 			<p class="post__date"><small>{% include post_date.html %}</small></p>
+
 			{% assign content = page.content | strip_newlines %}
 			
 			{%- if content != "" %}
@@ -33,6 +30,8 @@
           </div>
         {%- endif %}
       {%- endfor -%}
+      
+      {% include prev_next_blog.html %}
 
 		</div>
 

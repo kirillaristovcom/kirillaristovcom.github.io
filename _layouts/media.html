@@ -11,17 +11,14 @@
 			{% include lang_changer.html %}
 			
 			<h2 class="post__title">{{ page.title }}</h2>
+      <p class="post__date"><small>{% include post_date.html %}</small></p>
+      <p class="post__coord">{{ site.t[page.lang].coord }} {% include post_coord.html %}</p>
+      <p class="post__location">{{ page.location }}</p>
       
-			<p class="post__date"><small>{% include post_date.html %}</small></p>
+      {% capture media_item_name %}{{ page.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture -%}
+      <img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ page.title }}">
       
       {% include prev_next_media.html %}
-
-      {% capture media_item_name %}{{ page.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture -%}
-      
-      <p class="post__location">{{ page.location }}</p>
-      <p class="post__coord">{{ site.t[page.lang].coord }} {% include post_coord.html %}</p>
-      
-      <img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ page.title }}">
       
 		</div>
 
