@@ -71,6 +71,8 @@ t:
 collections:
   blog:
     output: true
+  media:
+    output: true
   pages:
     output: true
 
@@ -82,6 +84,11 @@ defaults:
       path: "_blog"
     values:
       layout: "post"
+  -
+    scope:
+      path: "_media"
+    values:
+      layout: "default"
   - 
     scope:
       path: "_pages"
