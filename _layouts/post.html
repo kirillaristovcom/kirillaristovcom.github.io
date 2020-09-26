@@ -18,14 +18,13 @@
 			
 			{% assign content = page.content | strip_newlines %}
 			
-			{% if content != "" %}
+			{%- if content != "" %}
 				{{ content }}				
 			{%- else %}
 				<p><strong> Not yet translated </strong></p>
 			{%- endif %}
       
-      {%- for media_item in site.media %}
-      
+      {% for media_item in site.media %}      
         {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}     
 
         {%- if page.media contains media_item_name %}
