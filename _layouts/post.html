@@ -7,7 +7,6 @@
 		<div class="content"> 
 
 			<h1 class="body__title"><a href="/{{ page.lang }}/">{{ site.t[page.lang].title }}</a></h1>
-			<!-- <h2 class="body__description">{{ site.t[page.lang].description }}</h2> -->
 			
 			{% include lang_changer.html %}
 			
@@ -15,28 +14,26 @@
       
 			<p class="post__date"><small>{% include post_date.html %}</small></p>
       
-      {% include prev_next.html %}
+      {% include prev_next_blog.html %}
 			
 			{%- assign content = page.content | strip_newlines %}
 			
-			{% if content != "" %}
+			{%- if content != "" %}
 				{{ content }}				
-			{% else %}
+			{%- else %}
 				<p><strong> Not yet translated </strong></p>
-			{% endif %}
+			{%- endif %}
       
-      {% for media_item in site.media %}
+      {%- for media_item in site.media %}
       
-        {% capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
-        
-        
+        {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}     
 
-        {% if page.media contains media_item_name %}
+        {%- if page.media contains media_item_name %}
           <div class="media-item">
             <a href="/media/{{ media_item_name }}/page/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a>
           </div>
-        {% endif %}
-      {% endfor %}
+        {%- endif %}
+      {%- endfor -%}
 
 		</div>
 
