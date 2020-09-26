@@ -88,9 +88,9 @@ defaults:
     scope:
       path: "_media"
     values:
-      layout: "default"
+      layout: "media"
   - 
     scope:
       path: "_pages"
     values:
-      layout: "media"
+      layout: "default"
