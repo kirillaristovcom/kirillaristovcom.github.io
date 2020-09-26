@@ -1,6 +1,6 @@
 <nav class="prev-next">
-{%- assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang %}
-{%- for post in blog %}
+{%- assign media = site.media | where_exp: "item", "item.layout == 'media'" | where: "lang", page.lang %}
+{%- for post in media %}
   {%- if post.lang == page.lang %}
     {%- if prev %}
       <a href="{{ post.url }}">{{ site.t[page.lang].prev }}</a>
@@ -13,8 +13,8 @@
   {%- endif %}
 {%- endfor %}
 
-{%- assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang | reverse %}
-{%- for post in blog %}
+{%- assign media = site.media | where_exp: "item", "item.layout == 'media'" | where: "lang", page.lang | reverse %}
+{%- for post in media %}
   {%- if post.lang == page.lang %}
     {%- if next %}
       <a href="{{ post.url }}">{{ site.t[page.lang].next }}</a>
