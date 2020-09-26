@@ -27,7 +27,7 @@
       
       {% for media_item in site.media %}
       
-        {% capture current_media_item %}{{ media_item.url | remove: "media" | remove: "/" | remove: " " }}{% endcapture %}
+        {% capture current_media_item %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
         
         <div> current_media_item <br>
         {{ current_media_item }}
