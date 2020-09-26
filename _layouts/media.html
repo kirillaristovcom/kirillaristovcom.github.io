@@ -16,14 +16,13 @@
 			<p class="post__date"><small>{% include post_date.html %}</small></p>
       
       {% include prev_next.html %}
+
+      {% capture media_item_name %}{{ page.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
+      
+      <img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ page.title }}">
+
 			
-			{%- assign content = page.content | strip_newlines %}
-			
-			{% if content != "" %}
-				{{ content }}				
-			{% else %}
-				<p><strong> Not yet translated </strong></p>
-			{% endif %}
+
       
 		</div>
 
