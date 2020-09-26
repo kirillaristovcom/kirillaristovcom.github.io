@@ -29,12 +29,20 @@
       
         {% capture current_media_item %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
         
-        <div> current_media_item <br>
-        {{ current_media_item }}
-        <br>
-        </div>
+        
 
         {% if page.media contains current_media_item %}
+          <div> current_media_item {{ current_media_item }}
+            <br><br>            
+            path {{ current_media_item.path }} <br>
+            dir {{ current_media_item.dir }} <br>
+            id {{ current_media_item.id }} <br>
+            url {{ current_media_item.url }}<br>
+            excerpt {{ current_media_item.excerpt }}<br>
+          </div>
+        
+        
+        
           <div class="media-item">
             <h3>{{ media_item.title }}</h3>
             <p>{{ media_item.location }}</p>
