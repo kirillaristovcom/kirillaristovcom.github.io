@@ -27,18 +27,18 @@
       
       {% for media_item in site.media %}
       
-        {% capture current_media_item %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
+        {% capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
         
         
 
-        {% if page.media contains current_media_item %}
+        {% if page.media contains media_item_name %}
           <div> current_media_item {{ current_media_item }}
             <br><br>            
-            path {{ current_media_item.path }} <br>
-            dir {{ current_media_item.dir }} <br>
-            id {{ current_media_item.id }} <br>
-            url {{ current_media_item.url }}<br>
-            excerpt {{ current_media_item.excerpt }}<br>
+            path {{ media_item.path }} <br>
+            dir {{ media_item.dir }} <br>
+            id {{ media_item.id }} <br>
+            url {{ media_item.url }}<br>
+            excerpt {{ media_item.excerpt }}<br>
           </div>
         
         
