@@ -16,7 +16,7 @@
   {%- endif %}
 {%- endfor %}
 
-{%- assign blog = site.collection | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang | reverse %}
+{%- assign items = collection | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang | reverse %}
 {%- for item in items %}
   {%- if item.lang == page.lang %}
     {%- if next %}
