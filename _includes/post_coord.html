@@ -1,9 +1,9 @@
-{%- assign da = page.url | remove: "media" | remove: "/" | remove: "page" | remove: "N" %}
-{%- assign da = da | replace: "E", "-" %}
+{%- assign da = page.url | remove: "media" | remove: "/" | remove: "page" | remove: "N" | replace: "E", "-" %}
 
 2016-10-13-06-57-N48-29744E130-83241-8565<br>
+2016-10-13-06-57-48-29744-130-83241-8565<br>
 
 {%- assign da = da | split: '-' %}
-{%- capture ds %}{{ da[6] }}.{{ da[7] }},{{ da[8] }}.{{ da[9] }}{% endcapture -%}
+{%- capture ds %}{{ da[5] }}.{{ da[6] }},{{ da[7] }}.{{ da[8] }}{% endcapture -%}
 
 {{ ds }}
