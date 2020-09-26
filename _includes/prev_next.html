@@ -1,5 +1,6 @@
 <p class="intro next-prev-navigation">
 {%- assign collection = include.collection %}
+<br><br>{{ collection }}<br><br>
 {%- assign items = site.collection | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang %}
 {%- for item in items %}
   {%- if item.lang == page.lang %}

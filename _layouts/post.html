@@ -29,7 +29,7 @@
       {%- endfor -%}
 
       {% if page.coord %}
-        <p><small>{{ site.t[page.lang].coord }}: <a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{page.coord}}&amp;placemark={{page.coord}}">{{page.coord}}</a></small></p>
+        <p><small>{{ site.t[page.lang].coord }} <a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{page.coord}}&amp;placemark={{page.coord}}">{{page.coord}}</a></small></p>
       {% endif %}
 
       {% include prev_next.html collection="blog" layout="post" %}
