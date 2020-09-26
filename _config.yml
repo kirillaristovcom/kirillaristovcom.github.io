@@ -54,6 +54,7 @@ t:
     pages_label: 'Страницы'
     prev: 'Предыдущий'
     next: 'Следующий'
+    coord: 'Координаты'
   en:
     title: 'Along Blueways of Endless Rivers'
     description: 'I am perfectly aware, lies at my feet a rough tract to travel'
@@ -65,6 +66,7 @@ t:
     pages_label: 'Pages'
     prev: 'Previous'
     next: 'Next'
+    coord: 'Coordinates'
 
 
 # Collections
