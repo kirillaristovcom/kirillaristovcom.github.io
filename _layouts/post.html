@@ -32,20 +32,8 @@
         
 
         {% if page.media contains media_item_name %}
-          <div> current_media_item {{ current_media_item }}
-            <br><br>            
-            path {{ media_item.path }} <br>
-            dir {{ media_item.dir }} <br>
-            id {{ media_item.id }} <br>
-            url {{ media_item.url }}<br>
-            excerpt {{ media_item.excerpt }}<br>
-          </div>
-        
-        
-        
           <div class="media-item">
-            <h3>{{ media_item.title }}</h3>
-            <p>{{ media_item.location }}</p>
+            <a href="/media/{{ media_item_name }}/page/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a>
           </div>
         {% endif %}
       {% endfor %}
