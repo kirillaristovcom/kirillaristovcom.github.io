@@ -1,8 +1,5 @@
 <p class="intro next-prev-navigation">
-{%- assign collectionName = include.collection %}
-{%- assign collection = site.collections | where:"label", collectionName | first %}
-{%- assign items = collection | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang %}
-
+{%- assign items = site[include.collection] | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang %}
 {%- for item in items %}
   {%- if item.lang == page.lang %}
     {%- if prev %}
@@ -16,7 +13,7 @@
   {%- endif %}
 {%- endfor %}
 
-{%- assign items = collection | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang | reverse %}
+{%- assign items = site[include.collection] | where_exp: "item", "item.layout == include.layout" | where: "lang", page.lang | reverse %}
 {%- for item in items %}
   {%- if item.lang == page.lang %}
     {%- if next %}
