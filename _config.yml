@@ -93,4 +93,4 @@ defaults:
     scope:
       path: "_pages"
     values:
-      layout: "default"
+      layout: "media"

@@ -1,0 +1,35 @@
+{% include head.html %}
+
+<body id="body">
+
+	<main class="media">
+	
+		<div class="content"> 
+
+			<h1 class="body__title"><a href="/{{ page.lang }}/">{{ site.t[page.lang].title }}</a></h1>
+			<!-- <h2 class="body__description">{{ site.t[page.lang].description }}</h2> -->
+			
+			{% include lang_changer.html %}
+			
+			<h2 class="post__title">{{ page.title }}</h2>
+      
+			<p class="post__date"><small>{% include post_date.html %}</small></p>
+      
+      {% include prev_next.html %}
+			
+			{%- assign content = page.content | strip_newlines %}
+			
+			{% if content != "" %}
+				{{ content }}				
+			{% else %}
+				<p><strong> Not yet translated </strong></p>
+			{% endif %}
+      
+		</div>
+
+	</main>
+
+	{% include footer.html %}
+
+</body>
+</html>
