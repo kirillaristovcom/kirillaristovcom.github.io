@@ -3,6 +3,7 @@ timezone: UTC
 lang: ru
 languages: ["ru", "en"]
 doc_root: "https://github.com/kirillaristovcom/kirillaristovcom.github.io/raw/master"
+title: test title bla bla
 
 permalink: "pretty"
 # Spaces and non-alphanumeric characters except for ._~!$&'()+,;=@
