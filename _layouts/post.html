@@ -11,7 +11,7 @@
 			{% include lang_changer.html %}
 
 			<h2 class="post__title">{{ page.title }}</h2>
- 			<p class="post__date"><small>{% include post_date.html %}</small></p>
+ 			<p class="post__date"><small>{% include date.html %}</small></p>
 
 			{% assign content = page.content | strip_newlines %}
 
@@ -29,7 +29,7 @@
       {%- endfor -%}
 
       {% if page.coord %}
-        <p><small>{{ site.t[page.lang].coord }} <a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{page.coord}}&amp;placemark={{page.coord}}">{{page.coord}}</a></small></p>
+        <p class="post__coord"><small>{{ site.t[page.lang].coord }} <a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{page.coord}}&amp;placemark={{page.coord}}">{{page.coord}}</a></small></p>
       {% endif %}
 
       {% include prev_next.html collection="blog" layout="post" %}
