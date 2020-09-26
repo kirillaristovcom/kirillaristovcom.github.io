@@ -3,4 +3,4 @@
 {%- assign da = da | split: '-' %}
 {%- capture ds %}{{ da[5] }}.{{ da[6] }},{{ da[7] }}.{{ da[8] }}{% endcapture -%}
 
-<a href="/map/?type=hybrid&zoom=12&center={{ ds }}&placemark={{ ds }}
+<a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{ ds }}&placemark={{ ds }}">{{ ds }}</a>

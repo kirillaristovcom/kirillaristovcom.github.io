@@ -3,35 +3,36 @@
 <body id="body">
 
 	<main class="post">
-	
+
 		<div class="content"> 
 
 			<h1 class="body__title"><a href="/{{ page.lang }}/">{{ site.t[page.lang].title }}</a></h1>
-			
+
 			{% include lang_changer.html %}
-			
+
 			<h2 class="post__title">{{ page.title }}</h2>
  			<p class="post__date"><small>{% include post_date.html %}</small></p>
 
 			{% assign content = page.content | strip_newlines %}
-			
+
 			{%- if content != "" %}
 				{{ content }}				
 			{%- else %}
 				<p><strong> Not yet translated </strong></p>
 			{%- endif %}
-      
-      {% for media_item in site.media %}      
-        {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}     
 
+      {% for media_item in site.media %}      
+        {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
         {%- if page.media contains media_item_name %}
-          <div class="media-item">
-            <a href="/media/{{ media_item_name }}/page/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a>
-          </div>
+          <p><a href="/media/{{ media_item_name }}/page/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a></p>
         {%- endif %}
       {%- endfor -%}
-      
-      {% include prev_next_blog.html %}
+
+      {% if page.coord %}
+        <p><small>{{ site.t[page.lang].coord }}: <a target="_blank" href="/map/?type=hybrid&amp;zoom=12&amp;center={{page.coord}}&amp;placemark={{page.coord}}">{{page.coord}}</a></small></p>
+      {% endif %}
+
+      {% include prev_next.html collection="blog" layout="post" %}
 
 		</div>
 

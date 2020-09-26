@@ -1,4 +1,4 @@
-<nav class="prev-next">
+<p class="intro next-prev-navigation">
 {%- assign media = site.media | where_exp: "item", "item.layout == 'media'" | where: "lang", page.lang %}
 {%- for post in media %}
   {%- if post.lang == page.lang %}
@@ -27,4 +27,4 @@
     {%- endif %}
   {%- endif %}
 {%- endfor %}
-</nav>
+</p>

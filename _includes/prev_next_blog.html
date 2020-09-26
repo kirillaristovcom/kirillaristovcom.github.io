@@ -1,4 +1,4 @@
-<nav class="prev-next">
+<p class="intro next-prev-navigation">
 {%- assign blog = site.blog | where_exp: "item", "item.layout == 'post'" | where: "lang", page.lang %}
 {%- for post in blog %}
   {%- if post.lang == page.lang %}
@@ -27,4 +27,4 @@
     {%- endif %}
   {%- endif %}
 {%- endfor %}
-</nav>
+</p>
