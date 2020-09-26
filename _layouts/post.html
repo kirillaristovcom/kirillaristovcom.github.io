@@ -16,9 +16,9 @@
       
       {% include prev_next_blog.html %}
 			
-			{%- assign content = page.content | strip_newlines %}
+			{% assign content = page.content | strip_newlines %}
 			
-			{%- if content != "" %}
+			{% if content != "" %}
 				{{ content }}				
 			{%- else %}
 				<p><strong> Not yet translated </strong></p>
