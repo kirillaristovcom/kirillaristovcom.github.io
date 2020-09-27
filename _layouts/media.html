@@ -15,7 +15,7 @@
       <p class="post__coord"><small>{{ site.t[page.lang].coord }} {% include coord.html %}</small></p>
       <p class="post__location">{{ page.location }}</p>
 
-      {% capture media_item_name %}{{ page.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture -%}
+      {% capture media_item_name %}{{ page.url | remove: "media" | remove: "/" | remove: "page.en" | | remove: "page.ru" }}{% endcapture -%}
       <img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ page.title }}">
 
       {% include prev_next.html collection="media" layout="media" %}

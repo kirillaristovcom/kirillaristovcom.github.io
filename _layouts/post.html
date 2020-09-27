@@ -22,9 +22,9 @@
 			{%- endif %}
 
       {% for media_item in site.media %}      
-        {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page" }}{% endcapture %}
+        {%- capture media_item_name %}{{ media_item.url | remove: "media" | remove: "/" | remove: "page.en" | | remove: "page.ru" }}{% endcapture %}
         {%- if page.media contains media_item_name %}
-          <p><a href="/media/{{ media_item_name }}/page/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a></p>
+          <p><a href="/media/{{ media_item_name }}/page.{{ page.lang }}/"><img src="/media/{{ media_item_name }}/{{ media_item_name }}.jpg" alt="{{ media_item.title }}. {{ media_item.location }}"></a></p>
         {%- endif %}
       {%- endfor -%}
 
